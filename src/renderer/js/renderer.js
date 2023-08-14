@@ -26,6 +26,16 @@
  * ```
  */
 
-import './index.css';
+import '../css/bootstrap.min.css';
+import '../css/index.css';
 
 console.log('👋 This message is being logged by "renderer.js", included via webpack');
+
+const createButton = document.getElementById('createButton')
+
+createButton.addEventListener('click', createButtonClickHandler);
+
+function createButtonClickHandler(e) {
+  console.log("Creating...")
+  // ipcRenderer.send('capture-window')
+}
