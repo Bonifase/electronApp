@@ -5,7 +5,8 @@
   "main": "src/main.js",
   "scripts": {
     "start": "electron .",
-    "test": "test"
+    "test": "test",
+    "dist": "electron-builder"
   },
   "keywords": [
     "Electron",
@@ -14,6 +15,15 @@
   "author": "Bonifase Orwa",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^25.5.0"
+    "electron": "^25.5.0",
+    "electron-builder": "^24.6.3"
+  },
+  "build": {
+    "productName": "Electron Test App",
+    "appId": "app id",
+    "target": "dmg",
+    "mac": {
+      "category": "Testing"
+    }
   }
 }
