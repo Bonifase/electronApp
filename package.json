@@ -1,13 +1,14 @@
 {
-  "name": "todo-app",
-  "productName": "Todo App",
+  "name": "thea-test-app",
+  "productName": "Thea Test App",
   "version": "1.0.0",
-  "description": "Todo App",
+  "description": "Test App",
   "main": "src/main.js",
   "scripts": {
-    "start": "electron .",
-    "test": "test",
-    "dist": "electron-builder"
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish"
   },
   "keywords": [
     "Electron",
@@ -16,13 +17,20 @@
   "author": "Bonifase Orwa",
   "license": "MIT",
   "devDependencies": {
+    "@electron-forge/cli": "^6.4.1",
+    "@electron-forge/maker-deb": "^6.4.1",
+    "@electron-forge/maker-dmg": "^6.4.1",
+    "@electron-forge/maker-rpm": "^6.4.1",
+    "@electron-forge/maker-squirrel": "^6.4.1",
+    "@electron-forge/maker-zip": "^6.4.1",
+    "@electron-forge/plugin-auto-unpack-natives": "^6.4.1",
+    "@electron-forge/publisher-github": "^6.4.1",
     "electron": "^25.5.0",
-    "electron-builder": "^24.6.3",
     "electronmon": "^2.0.2"
   },
   "build": {
-    "appId": "com.electron.${name}",
-    "productName": "Todo App",
+    "appId": "com.theaproject.testapp",
+    "productName": "Thea Test App",
     "copyright": "Copyright © 2023 ${author}",
     "mac": {
       "target": "dmg",
@@ -30,8 +38,10 @@
     },
     "dmg": {
       "title": "${productName} ${version}",
-      "backgroundColor": "#bbddee",
-      "icon": ""
+      "backgroundColor": "#bbddee"
     }
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0"
   }
 }
